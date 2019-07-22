@@ -1,11 +1,13 @@
-a = 'aaaabbcaa'
-i = 0
-
-while i < len(a):
-    tek = a[i]
-    counter = 1
-    while tek == a[i]:
+a = input()
+counter = 1
+letter = a[0]
+res = ''
+for i in range(1, len(a)):
+    if a[i] != letter:
+        res += letter + str(counter)
+        counter = 1
+        letter = a[i]
+    else:
         counter += 1
-        i += 1
-    print(a[i], counter)
-
+res += letter + str(counter)
+print(res)
